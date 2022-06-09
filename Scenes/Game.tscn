@@ -17,27 +17,36 @@ texture = ExtResource( 2 )
 
 [node name="POS0" parent="." instance=ExtResource( 3 )]
 position = Vector2( 374, 177 )
+pos = 0
 
 [node name="POS1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 512, 177 )
+pos = 1
 
 [node name="POS2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 644, 177 )
+pos = 2
 
 [node name="POS3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 374, 299 )
+pos = 3
 
 [node name="POS4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 512, 299 )
+pos = 4
 
 [node name="POS5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 644, 299 )
+pos = 5
 
 [node name="POS6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 374, 431 )
+pos = 6
 
 [node name="POS7" parent="." instance=ExtResource( 3 )]
 position = Vector2( 512, 431 )
+pos = 7
 
 [node name="POS8" parent="." instance=ExtResource( 3 )]
 position = Vector2( 644, 431 )
+pos = 8
