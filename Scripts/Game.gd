@@ -11,8 +11,14 @@ onready var checker_dict = {
 	"dia two" : [2,4,6]
 }
 
+onready var game_won = preload("res://Scenes/GameWon.tscn")
 var data_store = [] #stores current values in each pos
 var win = false #check for win
+
+#function to get the main node
+func get_main_node():
+	var root = get_tree().get_root()
+	return root.get_child(root.get_child_count() - 1)
 
 func _ready():
 	reset_data_store()
@@ -53,7 +59,22 @@ func check_win(pos, letter):
 			tally = 0 
 	
 	if win:
-		print("won")
+		won_game(checker_dict[key])
+		
+func won_game(win_key): # To make a win more interesting
+	var inst = game_won.instance()
+	var node = "POS" + String(win_key[1]) # The middle position of the whole key.
+	inst.position = get_main_node().get_node(node).global_position
+	var diff = win_key[2] - win_key[0]
+	get_main_node().add_child(inst)
+	
+	match diff: #equivalent to switch statement.
+		4: # comes win key diagonal
+			inst.rotation = deg2rad(-45)
+		8: #this is too
+			inst.rotation = deg2rad(45)
+		6: #this is vertical.
+			inst.rotation = deg2rad(90)
 				
 		
 func _process(delta):
